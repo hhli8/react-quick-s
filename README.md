@@ -3,7 +3,7 @@ create cli
 
 1 搭建cli，使用
 2 react+webpack4+typescript 单页面
-3 打包
+3 打包-代码分割未实现！
 
 "devDependencies": {
   "@commitlint/cli": "^11.0.0", // git提交规范限制
@@ -26,8 +26,9 @@ create cli
   "css-loader": "^4.3.0",
   "node-sass": "^4.14.1",
   "sass-loader": "^10.0.2",
-  "style-loader": "^1.2.1",
+  // "style-loader": "^1.2.1",
   "mini-css-extract-plugin": "^0.11.2", // 剥离css
+  // "resolve-url-loader": "^3.1.1", // css路由引用的 当此配置项启用 sourceMap 才能正确加载 Sass 里的相对路径资源，类似background: url(../image/test.png)
   "clean-webpack-plugin": "^3.0.0", // 清除
   "html-webpack-plugin": "^4.4.1", // 模板
   "webpack": "^4.44.1", // 基础

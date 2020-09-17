@@ -6,8 +6,8 @@
   "homepage": "/love/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config ./build/webpack.dev.js",
-    "build": "webpack --config ./build/webpack.prod.js"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,6 @@
     "node-sass": "^4.14.1",
     "react-hot-loader": "^4.12.21",
     "sass-loader": "^10.0.2",
-    "style-loader": "^1.2.1",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",

@@ -10,9 +10,31 @@ module.exports = Merge.merge(common, {
     chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
     path: path.resolve(__dirname, '../dist')
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
-  ]
+  optimization: {
+    runtimeChunk: {
+      name: 'manifest'
+    },
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        common: {
+          minChunks: 2,
+          name: 'commons',
+          chunks: 'async',
+          priority: 10,
+          reuseExistingChunk: true,
+          enforce: true
+        }
+      }
+    }
+//  splitChunks: {
+//    cacheGroups: {
+//      vendor: {
+//        test: /[\\/]node_modules[\\/]/,
+//        name: 'vendors',
+//        chunks: 'all'
+//      }
+//    }
+//  }
+  }
 })

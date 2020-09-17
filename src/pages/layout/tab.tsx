@@ -7,15 +7,22 @@ export interface Props {
   enthusiasmLevel?: number;
 }
 console.log('this is layout')
-function Hello() {
+
+
+function handleClick () {
+  console.log('asdasdasdad')
+}
+
+function LayoutTab() {
   return (
     <div className="hello">
       <div className="greeting">
         about
         <Link to="/home">home</Link>
+        <button  onClick={handleClick}>点我啊</button>
       </div>
     </div>
   );
 }
 
-export default Hello
+export default LayoutTab
