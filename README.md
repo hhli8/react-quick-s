@@ -20,6 +20,9 @@ create cli
   "@types/react": "^16.9.49", // ts
   "@types/react-dom": "^16.9.8", // ts
   "@types/react-router-dom": "^5.1.5",
+  "autoprefixer": "^9.8.6", // css前缀-降级了，否则一直报错
+    "postcss": "^8.0.6",
+    "postcss-loader": "^3.0.0",
   "awesome-typescript-loader": "^5.2.1", // ts
   "typescript": "^4.0.2", // ts
   "cross-env": "^7.0.2", // 环境工具

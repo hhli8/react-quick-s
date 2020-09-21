@@ -8,7 +8,6 @@ const prod = process.env.NODE_ENV === 'production'
 module.exports = {
   entry: {
     app: path.resolve(__dirname, '../src/main.tsx')
-    // vendor: ['react', 'react-dom', 'react-router-dom']
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -30,14 +29,30 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         exclude: /\.module\.(scss|sass)$/,
+        // include: [path.resolve(__dirname, 'static/css')],
         use: [
-           {
+          {
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: !prod,
             },
           },
           'css-loader',
+          {
+            loader:'postcss-loader',
+            options: {
+              plugins: [
+                require('autoprefixer')({
+                  overrideBrowserslist: ['last 5 version', '>1%', 'ios 7']
+                }),
+                require('postcss-pxtorem')({
+                  rootValue: 75,
+                  selectorBlackList: ['weui','mu'],
+                  propList: ['*']
+                })
+              ]
+            }
+          },
           'sass-loader'
         ]
       }

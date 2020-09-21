@@ -13,6 +13,7 @@ function Home() {
       <div className="greeting">
         about-home
         <button  onClick={handleClick}>点我啊</button>
+        <div className="txt">Receive Account</div>
       </div>
     </div>
   );

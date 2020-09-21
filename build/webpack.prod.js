@@ -27,14 +27,5 @@ module.exports = Merge.merge(common, {
         }
       }
     }
-//  splitChunks: {
-//    cacheGroups: {
-//      vendor: {
-//        test: /[\\/]node_modules[\\/]/,
-//        name: 'vendors',
-//        chunks: 'all'
-//      }
-//    }
-//  }
   }
 })
